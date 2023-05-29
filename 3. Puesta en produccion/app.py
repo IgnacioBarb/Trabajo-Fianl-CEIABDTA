@@ -48,12 +48,11 @@ def audio_img(ruta_guardado, ruta_guardado_img):
     # Configurar el tamaño de la figura
     fig = plt.gcf()
     fig.set_size_inches(1.28, 1.28)  # Tamaño de 128x128 píxeles
-
     # Configurar los bordes
     plt.subplots_adjust(left=0, right=1, bottom=0, top=1)  # Eliminar los bordes
-
     # Guardar el espectrograma con el tamaño y parámetros deseados
     fig.savefig(ruta_guardado_img, transparent=True)
+    plt.close()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div class="container mt-5 ml-5">
-        <div class="row">
-            <div class="col-6 justify-content-center">
+    <div class="container mt-5">
+        <div class="row justify-content-center ml-5">
+            <div class="col-8 justify-content-center">
                 <h1>Puesta en producción - Tanajo final</h1>
 
                 {% with messages = get_flashed_messages() %}
@@ -27,10 +27,10 @@
                 {% endif %}
                 {% endwith %}
                 <form action="/" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
+                    <div class="mb-3 w-50">
                         <label for="audio">Seleccionar archivo de audio:</label>
-                        <input type="file" class="form-control-file" id="audio" name="audio" accept="audio/*">
-                    </div>
+                        <input type="file" class="form-control" id="audio" name="audio" accept="audio/*">
+                      </div>
                     <button type="submit" class="btn btn-primary">Subir</button>
                 </form>
                 {% if resultados %}
@@ -56,11 +56,11 @@
                 <!-- Contenido del pop-up -->
                 <div class="modal-body">
                     <h3>Enfoque 1</h3>
-                    <p><strong>Modelo RandomForestClassifier</strong> : {{pred_rfc}}</p>
-                    <p><strong>Modelo SVC</strong> : {{pred_svc}}</p>
-                    <p><strong>Red Neuronal con LSTM</strong> : {{pred_rn_mel}}</p>
+                    <p><strong>Modelo RandomForestClassifier (71% de precison)</strong> : {{pred_rfc}}</p>
+                    <p><strong>Modelo SVC (68% de precison)</strong> : {{pred_svc}}</p>
+                    <p><strong>Red Neuronal (61% de precison)</strong> : {{pred_rn_mel}}</p>
                     <h3>Enfoque 2</h3>
-                    <p><strong>Red Neuronal</strong> : {{pred_rn_img}}</p>
+                    <p><strong>Red Neuronal (65% de precison)</strong> : {{pred_rn_img}}</p>
                 </div>
 
                 <!-- Pie del pop-up -->
